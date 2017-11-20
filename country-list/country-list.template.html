@@ -1,0 +1,27 @@
+<div class="country-list">
+	<div class="cardsground">
+		<div class="title-row">
+			<h2>Search for {{$ctrl.Beta.Field}}</h2>
+			<span class="badge">Sort by {{$ctrl.order.orderValue}}</span>
+		</div>
+		<div class="icon-loader"></div>  
+		<div class="row" id="country-cards">
+			<div class="col-md-4 col-sm-6 col-xl-3" ng-repeat="country in ($ctrl.countries | filter:$ctrl.Beta.Field | orderBy:['!' + $ctrl.order.orderValue, $ctrl.order.orderValue ])">
+				<a href="#/countries/{{country.alpha3Code}}">
+					<div class="card">
+						<div class="image">
+							<img width="100%" height="250px" ng-src="{{country.flag}}" alt="{{country.name + ' flag'}}">
+						</div>
+						<div class="text">
+							<span><a href="#/countries/{{country.alpha3Code}}" ng-click="$ctrl.clear()">{{country.name}}</a></span>
+							<span id="index-nth" class="badge">{{$index+1}}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
