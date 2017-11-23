@@ -9,8 +9,3 @@ angular.module('myApp', [
   'core'
 ])
 
-//.
-//config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-//	
-//}]);
-

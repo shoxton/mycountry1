@@ -8,6 +8,7 @@ angular.
 
 			//Share query filter
 			self.Alpha = Fact;
+
 			// Clears the search field
 			self.clear = function() {
 
