@@ -4,7 +4,9 @@ angular.
 		templateUrl: 'search-bar/search-bar.template.html',
 		controller: ['Fact', 'Order', 'Country', '$http','$route', '$location', function SearchBarCtrl(Fact, Order, Country, $http, $route, $location) {
 			var self = this;
-			self.countries = Country.query();
+			$http.get('https://restcountries.eu/rest/v2/all?fields=name;demonym;alpha3Code').then(function(response) {
+				self.countries = response.data;
+			})
 
 			//Share query filter
 			self.Alpha = Fact;
